@@ -4,7 +4,7 @@ int Apartment::counter = 0;
 
 Apartment::Apartment(const char** names) {
 
-	int min = 0, max = 7;
+	int min = 1, max = 7;
 	size = min + rand() % (max - min + 1);
 
 	residents = new Resident * [size];

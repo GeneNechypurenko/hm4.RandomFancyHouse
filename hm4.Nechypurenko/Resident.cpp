@@ -4,7 +4,7 @@ int Resident::counter = 0;
 
 Resident::Resident(const char** names) {
 
-    int min = 1, max = 39;
+    int min = 0, max = 39;
     int index = min + rand() % (max - min + 1);
 
     int length = strlen(names[index]);
@@ -28,6 +28,19 @@ Resident::~Resident() {
 
     delete[] name;
     counter--;
+}
+
+Resident& Resident::operator=(const Resident& object)    {
+
+    if (this != &object)    {
+
+        delete[] name;
+
+        int length = strlen(object.name) + 1;
+        name = new char[length];
+        strcpy_s(name, length, object.name);
+    }
+    return *this;
 }
 
 const char* Resident::GetName() const {

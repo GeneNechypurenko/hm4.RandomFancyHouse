@@ -34,6 +34,17 @@ int main() {
 	House hCopy = h;
 	hCopy.Print();
 
+	cout << "\n----------------operator = testing-----------------\n";
+	Resident r2(names);
+	r2 = rCopy;
+
+	Apartment a2(names);
+	a2 = aCopy;
+
+	House h2(names);
+	h2 = hCopy;
+	hCopy.Print();
+
 	delete[] names;
 
 	return 0;

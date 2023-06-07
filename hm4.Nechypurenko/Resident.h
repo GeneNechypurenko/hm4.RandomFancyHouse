@@ -16,6 +16,8 @@ public:
 
 	~Resident();
 
+	Resident& operator=(const Resident& object);
+
 	const char* GetName() const;
 
 	static int GetCounter();
